@@ -19,12 +19,12 @@ class CallbackTest {
     private WebDriver driver;
 
     @BeforeAll
-    static void setUpAll() {
+    public static void setUpAll() {
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -35,7 +35,7 @@ class CallbackTest {
     }
 
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
         driver.quit();
         driver = null;
     }
